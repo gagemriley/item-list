@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat";
+}
+body .container {
+  padding: 16px;
+  width: 100%;
+}
+body .container h1 {
+  margin: 25px 0 20px 0;
+  text-align: center;
+}
+body .container .wrapper #input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 20px;
+}
+body .container .wrapper .empty {
+  outline: solid red;
+}
+body .container .wrapper .empty::placeholder {
+  color: red;
+}
+body .container .wrapper #addBtn {
+  width: 100%;
+  background: #088074;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+body .container .wrapper #addBtn:hover {
+  background: #055049;
+}
+body .container ul {
+  margin: 10px 0;
+  list-style-type: none;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+body .container ul li {
+  padding: 16px;
+}
+body .container ul li:nth-child(even) {
+  background: #f2f2f2;
+}
+body .container footer {
+  margin: 16px 0;
+}
+body .container footer span {
+  font-size: 17px;
+}
+body .container footer #delBtn {
+  width: 100%;
+  background: #E54128;
+  display: block;
+  margin: 8px 0;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+body .container footer #delBtn:hover {
+  background: #c22e18;
+}
+@media screen and (min-width: 720px) {
+  body .container {
+    width: 60%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  body .container {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
