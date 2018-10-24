@@ -10,6 +10,7 @@ const delBtn  = document.querySelector('.Items__btn--del');
 const list = document.querySelector('.Items__list');
 const cnt  = document.querySelector('.Items__count');
 const cntH = "Item(s): ";
+let lastid = 0;
 
 // Add item to list (on enter/return press)
 inp.addEventListener("keyup", function(event) {
@@ -21,20 +22,37 @@ inp.addEventListener("keyup", function(event) {
 
 // Add item to list (on button click)
 addBtn.onclick = function addItem() {
+	
 	// Get input value
 	let text = inp.value;
 	// If input isn't empty add to list
 	if (text != "") {
-
+		lastid++;
+		lastid = lastid;
 		list.classList.remove('hide');
 
 		// Create new list item
 		let newLI = document.createElement('li');
+		let newIMG = document.createElement('i');
+		let newBTN = document.createElement('button');
+
+		newLI.setAttribute('id','item'+lastid);
+		newBTN.setAttribute('onClick','removeLI("'+'item'+lastid+'")');
 
 		// Set list item value = to input
 		newLI.innerHTML = text;
+
+		newBTN.classList.add("Items__btn", "Items__btn--delOne")
+		newIMG.classList.add("fas", "fa-trash-alt");
+		newBTN.appendChild(newIMG);
+		// let dataS = "data-id";
+		// let id = Array.from(list.children)
+		// newBTN.setAttribute( , )
+
+		newLI.appendChild(newBTN);
 		// Add item to front of list
 		// list.insertBefore(newLI, list.firstChild);
+
 		list.appendChild(newLI);
 
 		setTimeout(function() {
@@ -93,6 +111,14 @@ delBtn.onclick = function delAll() {
 	// Call clearFocus
 	clearFocus();
 }
+
+function removeLI(itemid){
+    let item = document.getElementById(itemid);
+    list.removeChild(item);
+    countItems();
+}
+
+
 
 // Call count for zero number of items at start
 countItems();
