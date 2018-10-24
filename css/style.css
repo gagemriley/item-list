@@ -20,7 +20,7 @@ body .container h1 {
   margin: 25px 0 20px 0;
   text-align: center;
 }
-body .container .wrapper #input {
+body .container #input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -29,13 +29,13 @@ body .container .wrapper #input {
   border-radius: 4px;
   font-size: 20px;
 }
-body .container .wrapper .empty {
+body .container .empty {
   outline: solid red;
 }
-body .container .wrapper .empty::placeholder {
+body .container .empty::placeholder {
   color: red;
 }
-body .container .wrapper #addBtn {
+body .container #addBtn {
   width: 100%;
   background: #088074;
   color: white;
@@ -47,28 +47,38 @@ body .container .wrapper #addBtn {
   font-weight: bold;
   font-size: 18px;
 }
-body .container .wrapper #addBtn:hover {
+body .container #addBtn:hover {
   background: #055049;
 }
 body .container ul {
   margin: 10px 0;
   list-style-type: none;
   width: 100%;
-  border: 1px solid #ddd;
 }
 body .container ul li {
   padding: 16px;
+  position: relative;
+  left: -200px;
+  opacity: 0;
+  transition: all 0.4s ease-out;
+}
+body .container ul li.add {
+  opacity: 1;
+  left: 0px;
 }
 body .container ul li:nth-child(even) {
   background: #f2f2f2;
 }
-body .container footer {
-  margin: 16px 0;
+body .container ul li.remove {
+  left: 400px;
+  opacity: 0;
 }
-body .container footer span {
+body .container span {
+  display: block;
+  margin-top: 32px;
   font-size: 17px;
 }
-body .container footer #delBtn {
+body .container #delBtn {
   width: 100%;
   background: #E54128;
   display: block;
@@ -80,7 +90,7 @@ body .container footer #delBtn {
   font-weight: bold;
   font-size: 18px;
 }
-body .container footer #delBtn:hover {
+body .container #delBtn:hover {
   background: #c22e18;
 }
 @media screen and (min-width: 720px) {
