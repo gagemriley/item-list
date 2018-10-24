@@ -3,36 +3,44 @@
 // [] Delete specific item from list (on X click)
 // [] Edit specific item in list (on Pencil click) 
 
-
 // Declare my constant elements
-const input = document.getElementById('input');
-const addBtn = document.getElementById('addBtn');
-const list = document.getElementById('list');
-const delBtn = document.getElementById('delBtn');
-const count = document.getElementById('count');
-const countS = "Item(s):";
+const inp  = document.querySelector('.Items__input');
+const addBtn  = document.querySelector('.Items__btn--add');
+const delBtn  = document.querySelector('.Items__btn--del');
+const list = document.querySelector('.Items__list');
+const cnt  = document.querySelector('.Items__count');
+const cntH = "Item(s): ";
 
 // Add item to list (on enter/return press)
-input.addEventListener("keyup", function(event) {
-    event.preventDefault();
+inp.addEventListener("keyup", function(event) {
+    // event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementById("addBtn").click();
+        addBtn.click();
     }
 });
 
 // Add item to list (on button click)
 addBtn.onclick = function addItem() {
 	// Get input value
-	let text = input.value;
+	let text = inp.value;
 	// If input isn't empty add to list
 	if (text != "") {
 
+		list.classList.remove('hide');
+
 		// Create new list item
 		let newLI = document.createElement('li');
+
 		// Set list item value = to input
 		newLI.innerHTML = text;
 		// Add item to front of list
-		list.insertBefore(newLI, list.firstChild);
+		// list.insertBefore(newLI, list.firstChild);
+		list.appendChild(newLI);
+
+		setTimeout(function() {
+			newLI.classList.add('add');
+		},100);
+
 		// Call clearFocus
 		clearFocus();
 		// Call countItems
@@ -41,40 +49,49 @@ addBtn.onclick = function addItem() {
 		// Call clearFocus
 		clearFocus();
 		// Add empty class to input for style change
-		input.classList.add('empty');
+		inp.classList.add('empty');
 		// Change placeholder 
-		input.placeholder = "*Required";
+		inp.placeholder = "*Required";
 		// Remove empty class on keypress
-		input.addEventListener("keypress", function(event2) {
-			input.classList.remove('empty');
-			input.placeholder = "Enter Items...";
+		inp.addEventListener("keypress", function(event2) {
+			inp.classList.remove('empty');
+			inp.placeholder = "Enter Item...";
 		});
 	}
 }
 
 // Clears the input field and adds focus
 function clearFocus() {
-	input.value = "";
-	input.focus();
+	inp.value = "";
+	inp.focus();
 }
 
 // Count items in list and display
 function countItems() {
-	// Select all items in list
-	let items = document.querySelectorAll('li');
-	// Get number of items
-	let num = items.length;
+	// Select all items in list and get number
+	// let numI = document.querySelectorAll('li').length;
+	let numI = list.childElementCount;
 	// Set count to number of items
-	count.innerHTML = countS + " " + num;
+	cnt.innerHTML = cntH + numI;
 }
 
 // Delete all items from list
 delBtn.onclick = function delAll() {
-	while(list.firstChild) list.removeChild(list.firstChild);
+	let items = list.children;
+
+	var interval = 100;
+	Array.from(items).forEach(function (el, index) {
+		setTimeout(function () {
+			el.classList.add('remove');
+		}, index * interval);
+		setTimeout(function () {
+			el.remove(el);
+			countItems();
+		}, index * interval + 300);
+	});
+
 	// Call clearFocus
 	clearFocus();
-	// Call count to reset to zero
-	countItems();
 }
 
 // Call count for zero number of items at start
