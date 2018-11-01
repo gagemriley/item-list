@@ -1,4 +1,4 @@
-# ITEM-LIST
+# item-list
 
 #### [gagemriley.com/item-list](https://www.gagemriley.com/item-list/)
 
