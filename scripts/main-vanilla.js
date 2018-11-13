@@ -1,6 +1,6 @@
 // [X] Add item to list (on button click or input return)
 // [X] Delete all items from list (on button click)
-// [] Delete specific item from list (on X click)
+// [X] Delete specific item from list (on X click)
 // [] Edit specific item in list (on Pencil click) 
 
 // Declare my constant elements
