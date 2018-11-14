@@ -1,18 +1,20 @@
-# item-list
+# Item List
 
-#### [gagemriley.com/item-list](https://www.gagemriley.com/item-list/)
+#### [Live](https://www.gagemriley.com/item-list/)
 
 ## Description:
-A project that allows a user to add/delete items from a list.
+A responsive item list that allows users to add/delete items, created to better understand HTML, CSS, and JavaScript.
 
-## Objective:
-[ ] Practice DOM manipulation
+## Objectives:
+:white_check_mark: Practice DOM manipulation.
 
-[ ] Practice using methods and events
+:white_check_mark: Practice using JavaScript methods & events.
 
-[ ] Practice Responsive Design & SCSS
+:white_check_mark: Practice responsive design.
 
-[ ] Practice BEM methodology
+:white_check_mark: Practice SASS / SCSS.
+
+:white_check_mark: Practice BEM methodology
 
 ## Summary:
-The goal of this project was to learn more about html, css, and javascript by creating a list item application.
+This project was created for myself. Continuing to learn/practice vanilla JavaScript. This was also an introduction to using SASS / SCSS and BEM methodology.
