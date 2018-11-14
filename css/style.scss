@@ -5,10 +5,8 @@ $break-tabUp: 1000px;
 
 $colors: ( 
 	primary: #088074, 
-	primary-light: lighten(#088074, 40%),
 	primary-dark: darken(#088074, 10%),
 	secondary: #E54128,
-	secondary-light: lighten(#E54128, 40%),
 	secondary-dark: darken(#E54128, 10%),
 	accent: #EEF4F2
 );
@@ -41,7 +39,7 @@ body {
 		}
 
 
-		#input {
+		.Items__input {
 			width: 100%;
 			padding: 12px 20px;
 			margin: 8px 0;
@@ -59,7 +57,7 @@ body {
 			color: red;
 		}
 
-		#addBtn {
+		.Items__btn--add {
 			width: 100%;
 			background: color(primary);
 			color: white;
@@ -72,7 +70,7 @@ body {
 			font-size: 18px;
 		}
 		
-		#addBtn:hover {
+		.Items__btn--add:hover {
 		    background: color(primary-dark);
 		}
 
@@ -82,7 +80,6 @@ body {
 			width: 100%;
 			
 			li {
-				// padding: 16px;
 				padding: 0 16px 0 16px;
 				height: 50px;
 				line-height: 50px;
@@ -125,7 +122,7 @@ body {
 			font-size: 17px;
 		}
 
-		#delBtn {
+		.Items__btn--del {
 			width: 100%;
 			background: color(secondary);
 			display: block;
@@ -136,10 +133,9 @@ body {
 			cursor: pointer;
 			font-weight: bold;
 			font-size: 18px;
-			// display: none;
 		}
 
-		#delBtn:hover {
+		.Items__btn--del:hover {
 			background: color(secondary-dark);
 		}
 
