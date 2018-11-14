@@ -21,7 +21,7 @@ body .container h1 {
   margin: 25px 0 20px 0;
   text-align: center;
 }
-body .container #input {
+body .container .Items__input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -36,7 +36,7 @@ body .container .empty {
 body .container .empty::placeholder {
   color: red;
 }
-body .container #addBtn {
+body .container .Items__btn--add {
   width: 100%;
   background: #088074;
   color: white;
@@ -48,7 +48,7 @@ body .container #addBtn {
   font-weight: bold;
   font-size: 18px;
 }
-body .container #addBtn:hover {
+body .container .Items__btn--add:hover {
   background: #055049;
 }
 body .container ul {
@@ -92,7 +92,7 @@ body .container span {
   margin-top: 32px;
   font-size: 17px;
 }
-body .container #delBtn {
+body .container .Items__btn--del {
   width: 100%;
   background: #E54128;
   display: block;
@@ -104,7 +104,7 @@ body .container #delBtn {
   font-weight: bold;
   font-size: 18px;
 }
-body .container #delBtn:hover {
+body .container .Items__btn--del:hover {
   background: #c22e18;
 }
 @media screen and (min-width: 720px) {
